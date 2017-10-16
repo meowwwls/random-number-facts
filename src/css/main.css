@@ -21,6 +21,21 @@ body {
   font-family: sans-serif;
 }
 
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0.5em 0.25em;
+  z-index: 1;
+  background-color: #fff;
+  font-size: 1.5rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-transform: uppercase;
+  font-family: 'Inconsolata', 'Courier New', monospace;
+}
+
 .main__wrap {
   position: relative;
   display: flex;
@@ -110,7 +125,7 @@ body {
   transform: translateY(2px);
 }
 
-.site_footer {
+.footer {
   padding: 1rem;
   background-color: #2c2c2c;
   text-align: center;
@@ -120,26 +135,69 @@ body {
   letter-spacing: 1px;
 }
 
-.site_footer__link {
+.footer__link {
+  position: relative;
   display: inline-block;
   padding: 0 0.25em;
   text-decoration: none;
   color: #000;
-  background-color: hsl(327, 85%, 70%);
-  background-color: var(--bg-col);
-  transition: background-color 200ms, box-shadow 200ms;
 }
 
-.site_footer__link:hover,
-.site_footer__link:focus {
-  background-color: transparent;
-  box-shadow: 0 5px 0 hsl(327, 85%, 70%);
-  box-shadow: 0 5px 0 var(--bg-col);
+.footer__link:active {
+  background-color: yellow;
+}
+
+.footer__link:focus {
+  outline: none;
+}
+
+/* using this instead of box-shadow on the link since it's a smoother animation */
+.footer__link::before,
+.footer__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: hsl(327, 85%, 70%);
+  background-color: var(--bg-col);
+}
+
+.footer__link::before {
+  z-index: -1;
+  top: 0;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom left;
+  transition: transform 200ms;
+}
+
+.footer__link::after {
+  bottom: -3px;
+  height: 3px;
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.footer__link:hover::before,
+.footer__link:focus::before {
+  transform: scaleY(1);
+}
+
+.footer__link:hover::after,
+.footer__link:focus::after {
+  opacity: 0;
 }
 
 @media screen and (min-width: 27em) {
   body {
     padding: 5vmin;
+  }
+
+  h1 {
+    top: 50%;
+    right: 2rem;
+    left: auto;
+    transform: translateY(-50%) rotate(0);
   }
 
   .numfact__container {
@@ -161,7 +219,7 @@ body {
     font-size: 3vmin;
   }
 
-  .site_footer {
+  .footer {
     background-color: transparent;
     color: #2c2c2c;
   }
