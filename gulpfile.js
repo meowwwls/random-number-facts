@@ -10,7 +10,7 @@ const rename = require('gulp-rename');
 
 gulp.task('clean', () => del(['dist/**', '!dist'], { force: true }));
 
-gulp.task('css', ['clean'], () => {
+gulp.task('css', () => {
   return gulp
     .src('src/**/*.css')
     .pipe(prefix())
@@ -20,7 +20,7 @@ gulp.task('css', ['clean'], () => {
     .pipe(reload({ stream: true }));
 });
 
-gulp.task('js', ['clean'], () => {
+gulp.task('js', () => {
   return gulp
     .src('src/**/*.js')
     .pipe(babel())

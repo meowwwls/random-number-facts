@@ -76,7 +76,7 @@ body {
 
 .numfact__fact {
   font-size: 1.1rem; /* fallback for Edge */
-  font-size: 3vmin;
+  font-size: 5vmin;
   font-family: 'Inconsolata', 'Courier New', monospace;
   text-align: left;
 }
@@ -103,7 +103,7 @@ body {
   transform: translateY(2px);
 }
 
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 27em) {
   html {
     padding: 5vmin;
   }
