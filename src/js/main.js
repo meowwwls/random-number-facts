@@ -7,8 +7,6 @@
   const trigger = document.getElementById('trigger');
   const body = document.body;
 
-  // let number;
-
   const getRandomNum = max => Math.floor(Math.random() * (max + 1));
 
   const getNewFact = num => {

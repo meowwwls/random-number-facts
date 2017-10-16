@@ -9,11 +9,27 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "whatwg-fetch": "^2.0.3"
+    "gulp": "^3.9.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "gulp-babel": "^7.0.0"
+    "gulp-babel": "^7.0.0",
+    "gulp-uglify": "^3.0.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 3 versions",
+              "safari >= 8"
+            ]
+          }
+        }
+      ]
+    ]
   }
 }
