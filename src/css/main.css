@@ -137,21 +137,27 @@ h1 {
 
 .footer__link {
   position: relative;
+  z-index: 1;
   display: inline-block;
   padding: 0 0.25em;
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 .footer__link:active {
   background-color: yellow;
 }
 
+.footer__link:hover,
+.footer__link:focus {
+  color: inherit;
+}
+
 .footer__link:focus {
   outline: none;
 }
 
-/* using this instead of box-shadow on the link since it's a smoother animation */
+/* using this instead of box-shadow * background-color on the link since it's a smoother animation */
 .footer__link::before,
 .footer__link::after {
   content: '';
@@ -222,6 +228,10 @@ h1 {
   .footer {
     background-color: transparent;
     color: #2c2c2c;
+  }
+
+  .footer__link {
+    color: inherit;
   }
 }
 
