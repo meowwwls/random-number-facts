@@ -9,14 +9,17 @@
   <link rel="stylesheet" href="dist/css/main.min.css">
 </head>
 <body>
-
-  <p aria-live="assertive" id="output" class="numfact__container">
-    <span id="num" class="numfact__num"></span>
-    <span id="text" class="numfact__fact"></span>
-  </p>
-
-  <button id="trigger" class="numfact__generate">Get a New Random Number Fact</button>
-
+  <main class="main__wrap">
+    <p aria-live="assertive" id="output" class="numfact__container">
+      <span id="num" class="numfact__num"></span>
+      <span id="text" class="numfact__fact"></span>
+    </p>
+    <button id="trigger" class="numfact__generate">Get a New Random Number Fact</button>  
+  </main>
+  <footer class="site_footer">
+    <p>Made by <a href="https://twitter.com/meowwwls" class="site_footer__link">Melissa Em</a>. View the source code on <a href="#" class="site_footer__link">GitHub</a></p>
+  </footer>
+  
   <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Promise,fetch"></script>  
   <script src="dist/js/main.min.js"></script>
 </body>

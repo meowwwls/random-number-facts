@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const del = require('del');
 const browserSync = require('browser-sync');
+
 const reload = browserSync.reload;
 const babel = require('gulp-babel');
 const prefix = require('gulp-autoprefixer');
@@ -10,25 +11,25 @@ const rename = require('gulp-rename');
 
 gulp.task('clean', () => del(['dist/**', '!dist'], { force: true }));
 
-gulp.task('css', () => {
-  return gulp
+gulp.task('css', () =>
+  gulp
     .src('src/**/*.css')
     .pipe(prefix())
     .pipe(cleanCSS())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist'))
-    .pipe(reload({ stream: true }));
-});
+    .pipe(reload({ stream: true }))
+);
 
-gulp.task('js', () => {
-  return gulp
+gulp.task('js', () =>
+  gulp
     .src('src/**/*.js')
     .pipe(babel())
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist'))
-    .pipe(reload({ stream: true }));
-});
+    .pipe(reload({ stream: true }))
+);
 
 gulp.task('browserSync', () => {
   browserSync.init({
@@ -41,6 +42,7 @@ gulp.task('browserSync', () => {
 gulp.task('watch', () => {
   gulp.watch('src/**/*.css', ['css']);
   gulp.watch('src/**/*.js', ['js']);
+  gulp.watch('./index.html', reload);
 });
 
 gulp.task('default', ['browserSync', 'js', 'css', 'watch']);
