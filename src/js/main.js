@@ -25,16 +25,33 @@
     outputGraph.classList.remove('fade-in');
     numTarget.classList.remove('slide-in');
 
-    fetch(`http://numbersapi.com/${number}?json`)
-      .then(blob => blob.json())
-      .then(data => {
+    const request = new XMLHttpRequest();
+    request.open('GET', `http://numbersapi.com/${number}?json`);
+
+    request.onload = () => {
+      if (request.status === 200) {
+        const data = JSON.parse(request.response);
+
         outputGraph.classList.add('fade-in');
 
         updateFactDisplay(data);
         updateNumberDisplay(data);
         updateHue(number);
-      })
-      .catch(e => console.error(e));
+      }
+    };
+
+    request.send();
+
+    // fetch(`http://numbersapi.com/${number}?json`)
+    //   .then(blob => blob.json())
+    //   .then(data => {
+    //     outputGraph.classList.add('fade-in');
+
+    //     updateFactDisplay(data);
+    //     updateNumberDisplay(data);
+    //     updateHue(number);
+    //   })
+    //   .catch(e => console.error(e));
   };
 
   trigger.addEventListener('click', () => getNewFact(360));
