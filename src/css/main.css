@@ -56,7 +56,7 @@ h1::after {
   margin: 0;
   padding: 2rem;
   /* fallback for browsers without custom prop support */
-  background-color: hsl(327, 85%, 70%);
+  background-color: hsl(170, 100%, 75%);
   background-color: var(--random-hue);
   color: #111;
   transition: background-color 350ms;
@@ -175,7 +175,7 @@ h1::after {
   position: absolute;
   left: 0;
   width: 100%;
-  background-color: hsl(327, 85%, 70%);
+  background-color: hsl(170, 100%, 75%);
   background-color: var(--random-hue);
 }
 
