@@ -25,9 +25,9 @@
     outputGraph.classList.remove('fade-in');
     numTarget.classList.remove('slide-in');
 
-    fetch(`https://cors-anywhere.herokuapp.com/http://numbersapi.com/${number}`)
-      .then(response => response.text())
-      .then(text =>   console.log(text)
+    fetch(`https://cors-anywhere.herokuapp.com/http://numbersapi.com/${number}?json`)
+      .then(response => response.json())
+      .then(data =>   console.log(data)
         // outputGraph.classList.add('fade-in');
         // console.log(data.body);
         // updateFactDisplay(data);
