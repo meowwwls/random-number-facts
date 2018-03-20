@@ -26,14 +26,14 @@
     numTarget.classList.remove('slide-in');
 
     fetch(`https://cors-anywhere.herokuapp.com/http://numbersapi.com/${number}`)
-      .then(response => {
-        console.log(response);
+      .then(response => response.text())
+      .then(text =>   console.log(text)
         // outputGraph.classList.add('fade-in');
         // console.log(data.body);
         // updateFactDisplay(data);
         // updateNumberDisplay(data);
         // updateHue(number);
-      })
+      )
       .catch(e => console.error(e));
   };
 
