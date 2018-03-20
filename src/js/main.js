@@ -25,14 +25,14 @@
     outputGraph.classList.remove('fade-in');
     numTarget.classList.remove('slide-in');
 
-    fetch(`http://numbersapi.com/${number}?json`)
-      .then(blob => blob.json())
-      .then(data => {
-        outputGraph.classList.add('fade-in');
-
-        updateFactDisplay(data);
-        updateNumberDisplay(data);
-        updateHue(number);
+    fetch(`https://cors-anywhere.herokuapp.com/http://numbersapi.com/${number}`)
+      .then(response => {
+        console.log(response);
+        // outputGraph.classList.add('fade-in');
+        // console.log(data.body);
+        // updateFactDisplay(data);
+        // updateNumberDisplay(data);
+        // updateHue(number);
       })
       .catch(e => console.error(e));
   };
