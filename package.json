@@ -1,8 +1,7 @@
 {
   "name": "random-number-facts",
   "version": "1.0.0",
-  "description":
-    "Using the Numbers API to generate random numbers and facts related to them.",
+  "description": "Using the Numbers API to generate random numbers and facts related to them.",
   "main": "src/js/main.js",
   "scripts": {},
   "author": "meowwwls",
@@ -29,7 +28,10 @@
         "env",
         {
           "targets": {
-            "browsers": ["last 3 versions", "safari >= 8"]
+            "browsers": [
+              "last 3 versions",
+              "safari >= 8"
+            ]
           }
         }
       ]

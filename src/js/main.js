@@ -25,11 +25,12 @@
     outputGraph.classList.remove('fade-in');
     numTarget.classList.remove('slide-in');
 
-    fetch(`http://numbersapi.com/${number}?json`)
-      .then(blob => blob.json())
+    fetch(
+      `https://cors-anywhere.herokuapp.com/http://numbersapi.com/${number}?json`
+    )
+      .then(response => response.json())
       .then(data => {
         outputGraph.classList.add('fade-in');
-
         updateFactDisplay(data);
         updateNumberDisplay(data);
         updateHue(number);
